@@ -15,7 +15,7 @@ namespace SquareRoot
 
         static void Main(string[] args)
         {
-
+            Console.WriteLine("1 task");
             double a, b, c;
             Console.WriteLine("Введите a: ");
             a = Convert.ToDouble(Console.ReadLine());
@@ -28,6 +28,7 @@ namespace SquareRoot
 
             Console.WriteLine(result[0]);
             Console.WriteLine(result[1]);
+
         }
 
         public static double[] solveSquareRoot(double a, double b, double c)
@@ -57,10 +58,16 @@ namespace SquareRoot
                 
             }
         }
-            
-       
 
+        
     }
      
+    
+}
+
+
+
+namespace bubblesort
+{
     
 }
