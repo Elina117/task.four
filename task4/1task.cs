@@ -29,6 +29,7 @@ namespace SquareRoot
             Console.WriteLine(result[0]);
             Console.WriteLine(result[1]);
 
+
         }
 
         public static double[] solveSquareRoot(double a, double b, double c)
@@ -62,12 +63,5 @@ namespace SquareRoot
         
     }
      
-    
-}
-
-
-
-namespace bubblesort
-{
     
 }

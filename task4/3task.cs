@@ -1,11 +1,10 @@
 ﻿using System;
-namespace bubblesort 
+namespace bubblesort
 {
     public class BubbleSort
     {
         public static int[] BubbleSortAlgorithm(int[] sequence)
         {
-            
 
             int temp;
             for (int q = 0; q < sequence.Length - 1; q++)
@@ -21,7 +20,7 @@ namespace bubblesort
                     }
                 }
             }
-            
+
             return sequence;
         }
     }
