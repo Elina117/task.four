@@ -26,7 +26,7 @@ namespace task4
     }
     public class Program
     {
-        static byte Task6(ded oldman, params string[] sequence)
+        static byte task6(ded oldman, params string[] sequence)
         {
             foreach (string i in oldman.phrases)
             {
@@ -126,15 +126,90 @@ namespace task4
             }
         }
 
-        static void task7()
-        {
-            static int[] Task7(int[] array, int leftIndex, int rightIndex)
-            {
 
+
+        static int[] task7(int[] array, int leftIndex, int rightIndex)
+        {
+            var i = leftIndex;
+            var j = rightIndex;
+            var pivot = array[leftIndex];
+            while (i <= j)
+            {
+                while (array[i] < pivot)
+                {
+                    i++;
+                }
+
+                while (array[j] > pivot)
+                {
+                    j--;
+                }
+                if (i <= j)
+                {
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                    i++;
+                    j--;
+                }
             }
 
+            if (leftIndex < j)
+                Task7(array, leftIndex, j);
+            if (i < rightIndex)
+                Task7(array, i, rightIndex);
+            return array;
         }
 
-    }
+        static void Main(string[] args)
+        {
+            
+            //Console.Write("Введите дату рождения: ");
+            //var day = Console.ReadLine();
+            //DateTime birthDate = new DateTime(day);
+            //int age = CalculateAge(birthDate);
+            //Console.WriteLine("{0}", age);
+
+
+
+            Console.Write("Task2");
+            task2();
+            Console.ReadKey();
+            Console.Clear();
+            
+
+
+            Console.Write("Task5");
+            task5();
+            Console.ReadKey();
+            Console.Clear();
+
+
+            Console.Write("Task6");
+            string[] q1 = { "проституки", "Гады!" };
+            ded ded1 = new ded("Тимофей Тимошевич", 1, q1, 0);
+            string[] q2 = { "проституты", "одноклеточные", "агузок", "бляди" };
+            ded ded2 = new ded("Сергей Михайлович", 2, q2, 0);
+            string[] q3 = { "проституки", "лентяи", "фашисты", "идиоты" };
+            ded ded3 = new ded("Петр Петрович", 3, q3, 0);
+            string[] q4 = { "Гады", "ебалаи", "бестолочи" };
+            ded ded4 = new ded("Иван Степанович", 1, q4, 0);
+            string[] q5 = { "проституки", "дебилы", "сучки" };
+            ded ded5 = new ded("Алексей Семенович", 4, q5, 0);
+            string[] words = { "проституки", "проституты", "Гады!", "бестолочи", "сучки-крашенные", "дебилы", "идиоты", "бляди" };
+            Console.WriteLine("количество синяков от бабки: " + task6(ded1, words));
+            Console.WriteLine("количество синяков от бабки: " + task6(ded1, words));
+            Console.WriteLine("количество синяков от бабки: " + task6(ded1, words));
+            Console.WriteLine("количество синяков от бабки: " + task6(ded1, words));
+            Console.WriteLine("количество синяков от бабки: " + task6(ded1, words));
+            Console.ReadKey();
+            Console.Clear();
+
+            int[] n3 = { 1, 4, 3, 2, 5, 7, 10, 9, 6, 8 };
+            Console.WriteLine(string.Join(" ", task7(n3, 0, n3.Length - 1)));
+            Console.ReadKey();
+        }
+        
+    }   
 }
 
